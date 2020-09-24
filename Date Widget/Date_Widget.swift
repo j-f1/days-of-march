@@ -17,6 +17,13 @@ let gregorian = { () -> Calendar in
 
 let midnight = { gregorian.startOfDay(for: Date()) }
 
+struct COVID: Decodable {
+    let death: Int
+}
+
+let deaths = try? JSONDecoder().decode([COVID].self, from: Data(contentsOf: URL(string: "https://api.covidtracking.com/v1/us/current.json")!)).first?.death
+
+
 struct Provider: IntentTimelineProvider {
     func placeholder(in context: Context) -> SimpleEntry {
       SimpleEntry(date: midnight(), configuration: ConfigurationIntent())
@@ -47,12 +54,37 @@ let formatter = { () -> NumberFormatter in
   return formatter
 }()
 
+func format(_ rate: Double) -> String {
+    let integer = Int(rate.rounded(.down))
+    let fraction = rate - Double(integer)
+    if fraction <= 1/8 {
+        return "\(integer)"
+    } else if fraction <= 3/8 {
+        return "\(integer)¼"
+    } else if fraction <= 5/8 {
+        return "\(integer)½"
+    } else if fraction <= 7/8 {
+        return "\(integer)¾"
+    } else {
+        return "\(integer + 1)"
+    }
+}
+
 struct Date_WidgetEntryView : View {
     var entry: Provider.Entry
 
     var body: some View {
       let weekday = gregorian.weekdaySymbols[gregorian.component(.weekday, from: entry.date) - 1]
       VStack(alignment: .leading) {
+        if let deaths = deaths {
+            let interval = Date().timeIntervalSince(marchFirst)
+            let rate = (interval / Double(deaths))
+            Text("every \(format(rate)) seconds")
+                .font(.system(.footnote, design: .rounded))
+                .fontWeight(.medium)
+                .foregroundColor(.gray)
+                .opacity(0.8)
+        }
         HStack { Spacer() }
         Spacer()
         Text(weekday.uppercased())
