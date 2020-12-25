@@ -95,7 +95,7 @@ struct Date_WidgetEntryView : View {
           .font(.system(.title2, design: .rounded))
           .fontWeight(.semibold)
           .foregroundColor(.gray)
-        Text("\(formatter.string(from: NSNumber(value: gregorian.dateComponents([.day], from: marchFirst, to: entry.date).day!))!)")
+        Text("\(formatter.string(from: NSNumber(value: gregorian.dateComponents([.day], from: marchFirst, to: entry.date).day! + 1))!)")
           .font(.system(.largeTitle, design: .rounded))
           .bold()
       }.padding()
@@ -118,7 +118,9 @@ struct Date_Widget: Widget {
 
 struct Date_Widget_Previews: PreviewProvider {
     static var previews: some View {
-        Date_WidgetEntryView(entry: SimpleEntry(date: midnight(), configuration: ConfigurationIntent()))
-            .previewContext(WidgetPreviewContext(family: .systemSmall))
+      Group {
+        Date_WidgetEntryView(entry: SimpleEntry(date: gregorian.date(from: .init(calendar: gregorian, year: 2020, month: 3, day: 1, hour: 8, minute: 0, second: 0))!, configuration: ConfigurationIntent()))
+        Date_WidgetEntryView(entry: SimpleEntry(date: Date(), configuration: ConfigurationIntent()))
+      }.previewContext(WidgetPreviewContext(family: .systemSmall))
     }
 }
