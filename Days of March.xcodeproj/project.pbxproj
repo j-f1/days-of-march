@@ -45,6 +45,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		85A00D7425963C8D00CD6863 /* Days of March.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Days of March.entitlements"; sourceTree = "<group>"; };
+		85A00D7525963C8D00CD6863 /* Date WidgetExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Date WidgetExtension.entitlements"; sourceTree = "<group>"; };
 		85A3935125083A0E009EB3E8 /* Days of March.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Days of March.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		85A3935425083A0E009EB3E8 /* Days_of_MarchApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Days_of_MarchApp.swift; sourceTree = "<group>"; };
 		85A3935625083A0E009EB3E8 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -83,6 +85,7 @@
 		85A3934825083A0E009EB3E8 = {
 			isa = PBXGroup;
 			children = (
+				85A00D7525963C8D00CD6863 /* Date WidgetExtension.entitlements */,
 				85A3935325083A0E009EB3E8 /* Days of March */,
 				85A3936D25083A34009EB3E8 /* Date Widget */,
 				85A3936825083A34009EB3E8 /* Frameworks */,
@@ -102,6 +105,7 @@
 		85A3935325083A0E009EB3E8 /* Days of March */ = {
 			isa = PBXGroup;
 			children = (
+				85A00D7425963C8D00CD6863 /* Days of March.entitlements */,
 				85A3935425083A0E009EB3E8 /* Days_of_MarchApp.swift */,
 				85A3935625083A0E009EB3E8 /* ContentView.swift */,
 				85A3935825083A0F009EB3E8 /* Assets.xcassets */,
@@ -387,6 +391,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Days of March/Days of March.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Days of March/Preview Content\"";
 				DEVELOPMENT_TEAM = 288H3WAR3W;
@@ -399,6 +404,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jedfox.Days-of-March";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -410,6 +416,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Days of March/Days of March.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"Days of March/Preview Content\"";
 				DEVELOPMENT_TEAM = 288H3WAR3W;
@@ -422,6 +429,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jedfox.Days-of-March";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -432,6 +440,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Date WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 288H3WAR3W;
 				INFOPLIST_FILE = "Date Widget/Info.plist";
@@ -443,6 +452,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jedfox.Days-of-March.Date-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -453,6 +463,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_WIDGET_BACKGROUND_COLOR_NAME = WidgetBackground;
+				CODE_SIGN_ENTITLEMENTS = "Date WidgetExtension.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 288H3WAR3W;
 				INFOPLIST_FILE = "Date Widget/Info.plist";
@@ -464,6 +475,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jedfox.Days-of-March.Date-Widget";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
